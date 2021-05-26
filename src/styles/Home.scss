@@ -1,0 +1,17 @@
+@import "colors";
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  color: $primary-text-color;
+}
+
+#homepage-image {
+  width: 100rem;
+  height: 50rem;
+}

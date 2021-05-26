@@ -1,3 +1,5 @@
+@import "colors";
+
 *,
 *::before,
 *::after {
@@ -12,6 +14,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: $background-color;
+  color: $primary-text-color;
 }
 
 code {
