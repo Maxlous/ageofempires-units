@@ -8,14 +8,17 @@ const Ages = () => {
 
   useEffect(() => {
     if (isAllSelected) {
+      dispatch(removeAge("Remove", "All"));
       dispatch(filterAccordingToAge("All"));
+    } else {
+      dispatch(removeAge("Remove", "All"));
     }
   });
 
   const handleCheck = (e) => {
     if (e.target.checked && isAllSelected) {
       setIsAllSelected(false);
-      dispatch(removeAge("Remove", "All"));
+      // dispatch(removeAge("Remove", "All"));
       dispatch(filterAccordingToAge(e.target.value));
     }
     if (e.target.checked && !isAllSelected) {
@@ -27,11 +30,9 @@ const Ages = () => {
 
   const handleAll = (e) => {
     if (e.target.checked) {
-      setIsAllSelected(false);
-      dispatch(removeAge("Remove", "All"));
-    } else {
-      dispatch(removeAge("Remove", "All"));
       setIsAllSelected(true);
+    } else {
+      setIsAllSelected(false);
     }
   };
 

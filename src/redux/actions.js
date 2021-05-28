@@ -44,3 +44,40 @@ export const allAges = () => {
     type: types.ALL_AGES,
   };
 };
+
+export const filterAccordingToCost = (payload, cost) => {
+  return {
+    type: types.FILTER_FOR_COST,
+    payload: payload,
+    cost: cost,
+  };
+};
+
+export const foodCost = (cost) => {
+  return {
+    type: types.FOOD_COST,
+    cost: cost,
+  };
+};
+
+export const goldCost = (cost) => {
+  return {
+    type: types.GOLD_COST,
+    cost: cost,
+  };
+};
+
+export const woodCost = (cost) => {
+  return {
+    type: types.WOOD_COST,
+    cost: cost,
+  };
+};
+
+export const removeCost = (payload, cost) => {
+  return {
+    type: types.REMOVE_COST,
+    payload: payload,
+    cost: cost,
+  };
+};

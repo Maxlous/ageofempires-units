@@ -2,8 +2,8 @@ import { useSelector } from "react-redux";
 import TableItem from "./TableItem";
 
 const UnitTable = () => {
-  const data = useSelector((state) => state.agesReducer);
-  console.log(data);
+  const data = useSelector((state) => state.costsReducer);
+
   return (
     <table>
       <tr key="heading">
@@ -12,17 +12,18 @@ const UnitTable = () => {
         <th>age</th>
         <th>costs</th>
       </tr>
-      {data.map((unit) => {
-        return (
-          <TableItem
-            key={unit.id}
-            name={unit.name}
-            age={unit.age}
-            costs={unit.cost}
-            id={unit.id}
-          />
-        );
-      })}
+      {data &&
+        data.map((unit) => {
+          return (
+            <TableItem
+              key={unit.id}
+              name={unit.name}
+              age={unit.age}
+              costs={unit.cost}
+              id={unit.id}
+            />
+          );
+        })}
     </table>
   );
 };
