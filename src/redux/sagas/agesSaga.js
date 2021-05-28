@@ -6,6 +6,7 @@ import {
   castleAge,
   imperialAge,
   removeAge,
+  allAges,
 } from "../actions";
 
 function* asyncUpdateAges(action) {
@@ -13,6 +14,7 @@ function* asyncUpdateAges(action) {
   if (action.payload === "Feudal") yield put(feudalAge());
   if (action.payload === "Castle") yield put(castleAge());
   if (action.payload === "Imperial") yield put(imperialAge());
+  if (action.payload === "All") yield put(allAges());
 }
 
 function* asyncRemoveAges(action) {

@@ -38,3 +38,9 @@ export const removeAge = (payload, age) => {
     age: age,
   };
 };
+
+export const allAges = () => {
+  return {
+    type: types.ALL_AGES,
+  };
+};

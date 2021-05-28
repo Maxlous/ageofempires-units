@@ -5,4 +5,5 @@ export const types = {
   CASTLE: "CASTLE",
   IMPERIAL: "IMPERIAL",
   REMOVE_AGE: "REMOVE_AGE",
+  ALL_AGES: "ALL_AGES",
 };
