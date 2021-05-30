@@ -1,6 +1,12 @@
+import { useHistory } from "react-router-dom";
+
 const TableItem = ({ id, name, age, costs }) => {
+  const history = useHistory();
+  const goToDetailsPage = () => {
+    history.push(`/units/details/${name}`);
+  };
   return (
-    <tr>
+    <tr onClick={goToDetailsPage}>
       <td>{id}</td>
       <td>{name}</td>
       <td>{age}</td>
