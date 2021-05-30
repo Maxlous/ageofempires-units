@@ -8,15 +8,20 @@ const filterReducer = (state = data.units, action) => {
       return [...data.units.filter((unit) => unit.age === action.payload)];
 
     case types.FILTER_ACC_COST:
-      const dataAccToAge = [
-        ...data.units.filter((unit) => unit.age === action.payload.age),
-      ];
+      let dataAccToAge = [];
+      if (action.payload.age === "All") {
+        dataAccToAge = [...data.units];
+      } else {
+        dataAccToAge = [
+          ...data.units.filter((unit) => unit.age === action.payload.age),
+        ];
+      }
       const onlyValidCosts = Object.entries(action.payload.costs).filter(
         ([key, value]) => value
       );
       if (onlyValidCosts.length < 1) return dataAccToAge;
       const validCostsObj = Object.fromEntries(onlyValidCosts);
-
+      // add units who pass at least one criteria
       let rawFilteredState = [];
       for (let i = 0; i < dataAccToAge.length; i++) {
         try {
@@ -56,38 +61,42 @@ const filterReducer = (state = data.units, action) => {
           console.log(e);
         }
       }
-      const uniqueFilteredState = Array.from(new Set(rawFilteredState));
-
-      for (let i = 0; i < uniqueFilteredState.length; i++) {
+      // remove duplicates
+      const uniqueRawFilteredState = Array.from(new Set(rawFilteredState));
+      //remove the ones who are not able to pass the criteria
+      for (let i = uniqueRawFilteredState.length - 1; i >= 0; i--) {
         try {
-          if (uniqueFilteredState[i].cost.Food && validCostsObj.Food) {
-            if (uniqueFilteredState[i].cost.Food > validCostsObj.Food) {
-              uniqueFilteredState.splice(i, 1);
+          if (uniqueRawFilteredState[i].cost.Food && validCostsObj.Food) {
+            if (uniqueRawFilteredState[i].cost.Food > validCostsObj.Food) {
+              uniqueRawFilteredState.splice(i, 1);
+              continue;
             }
           }
         } catch (e) {
           console.log(e);
         }
         try {
-          if (uniqueFilteredState[i].cost.Wood && validCostsObj.Wood) {
-            if (uniqueFilteredState[i].cost.Wood > validCostsObj.Wood) {
-              uniqueFilteredState.splice(i, 1);
+          if (uniqueRawFilteredState[i].cost.Wood && validCostsObj.Wood) {
+            if (uniqueRawFilteredState[i].cost.Wood > validCostsObj.Wood) {
+              uniqueRawFilteredState.splice(i, 1);
+              continue;
             }
           }
         } catch (e) {
           console.log(e);
         }
         try {
-          if (uniqueFilteredState[i].cost.Gold && validCostsObj.Gold) {
-            if (uniqueFilteredState[i].cost.Gold > validCostsObj.Gold) {
-              uniqueFilteredState.splice(i, 1);
+          if (uniqueRawFilteredState[i].cost.Gold && validCostsObj.Gold) {
+            if (uniqueRawFilteredState[i].cost.Gold > validCostsObj.Gold) {
+              uniqueRawFilteredState.splice(i, 1);
+              continue;
             }
           }
         } catch (e) {
           console.log(e);
         }
       }
-      return uniqueFilteredState;
+      return uniqueRawFilteredState;
     default:
       return state;
   }

@@ -22,7 +22,7 @@ const Costs = () => {
   };
 
   const handleSliderChange = (e) => {
-    dispatch(updateCost(e.target.name, e.target.value));
+    dispatch(updateCost(e.target.name, e.target.valueAsNumber));
   };
 
   return (
@@ -42,7 +42,7 @@ const Costs = () => {
           <input
             type="range"
             name="Wood"
-            min="0"
+            min="1"
             max="200"
             defaultValue={50}
             onChange={handleSliderChange}
@@ -66,7 +66,7 @@ const Costs = () => {
           <input
             type="range"
             name="Food"
-            min="0"
+            min="1"
             max="200"
             defaultValue={50}
             onChange={handleSliderChange}
@@ -90,7 +90,7 @@ const Costs = () => {
           <input
             type="range"
             name="Gold"
-            min="0"
+            min="1"
             max="200"
             defaultValue={50}
             onChange={handleSliderChange}
