@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import agesReducer from "./agesReducer";
-import costsReducer from "./costsReducer";
+import filterReducer from "./filterReducer";
+import optionsReducer from "./optionsReducer";
 
 const rootReducer = combineReducers({
-  agesReducer,
-  costsReducer,
+  filterReducer,
+  optionsReducer,
 });
 
 export default rootReducer;

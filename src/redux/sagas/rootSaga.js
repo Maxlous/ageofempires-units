@@ -1,7 +1,6 @@
-import { all, call } from "redux-saga/effects";
-import { watchAgesSaga } from "./agesSaga";
-import { watchCostsSaga } from "./costsSaga";
+import { all } from "redux-saga/effects";
+import { watchFilterSaga } from "./filterSaga";
 
 export default function* rootSaga() {
-  yield all([call(watchAgesSaga), call(watchCostsSaga)]);
+  yield all([watchFilterSaga()]);
 }

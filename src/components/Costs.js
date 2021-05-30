@@ -1,27 +1,29 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { filterAccordingToCost, removeCost } from "../redux/actions";
+import { useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { updateCost } from "../redux/actions";
 
 const Costs = () => {
-  const [isDisabled, setIsDisabled] = useState({
-    food: true,
-    gold: true,
-    wood: true,
-  });
-
+  const isCost = useSelector((state) => state.optionsReducer.costs);
   const dispatch = useDispatch();
+  const goldRef = useRef();
+  const foodRef = useRef();
+  const woodRef = useRef();
 
   const handleCheckboxChange = (e) => {
     if (e.target.checked) {
-      setIsDisabled({ ...isDisabled, [e.target.id]: false });
-      dispatch(filterAccordingToCost(e.target.value, 50));
+      dispatch(updateCost(e.target.value, 50));
     } else {
-      setIsDisabled({ ...isDisabled, [e.target.id]: true });
-      dispatch(removeCost("Remove", e.target.value));
+      //set default value 50 to re-orient slider when cost category disabled
+      if (e.target.value === "Food") foodRef.current.value = 50;
+      if (e.target.value === "Wood") woodRef.current.value = 50;
+      if (e.target.value === "Gold") goldRef.current.value = 50;
+      dispatch(updateCost(e.target.value, null));
     }
   };
 
-  const handleSliderChange = (e) => {};
+  const handleSliderChange = (e) => {
+    dispatch(updateCost(e.target.name, e.target.value));
+  };
 
   return (
     <section>
@@ -37,18 +39,17 @@ const Costs = () => {
           <label htmlFor="wood">Wood</label>
         </div>
         <div>
-          {isDisabled.wood ? (
-            <input type="range" name="Wood" min="0" max="200" disabled />
-          ) : (
-            <input
-              type="range"
-              name="Wood"
-              min="0"
-              max="200"
-              defaultValue={50}
-              onChange={handleSliderChange}
-            />
-          )}
+          <input
+            type="range"
+            name="Wood"
+            min="0"
+            max="200"
+            defaultValue={50}
+            onChange={handleSliderChange}
+            disabled={isCost.Wood ? false : true}
+            ref={woodRef}
+          />
+          <span>{isCost.Wood ? woodRef.current.value : ""}</span>
         </div>
       </div>
       <div>
@@ -62,18 +63,17 @@ const Costs = () => {
           <label htmlFor="food">Food</label>
         </div>
         <div>
-          {isDisabled.food ? (
-            <input type="range" name="Food" min="0" max="200" disabled />
-          ) : (
-            <input
-              type="range"
-              name="Food"
-              min="0"
-              max="200"
-              defaultValue={50}
-              onChange={handleSliderChange}
-            />
-          )}
+          <input
+            type="range"
+            name="Food"
+            min="0"
+            max="200"
+            defaultValue={50}
+            onChange={handleSliderChange}
+            disabled={isCost.Food ? false : true}
+            ref={foodRef}
+          />
+          <span>{isCost.Food ? foodRef.current.value : ""}</span>
         </div>
       </div>
       <div>
@@ -87,18 +87,17 @@ const Costs = () => {
           <label htmlFor="gold">Gold</label>
         </div>
         <div>
-          {isDisabled.gold ? (
-            <input type="range" name="Gold" min="0" max="200" disabled />
-          ) : (
-            <input
-              type="range"
-              name="Gold"
-              min="0"
-              max="200"
-              defaultValue={50}
-              onChange={handleSliderChange}
-            />
-          )}
+          <input
+            type="range"
+            name="Gold"
+            min="0"
+            max="200"
+            defaultValue={50}
+            onChange={handleSliderChange}
+            disabled={isCost.Gold ? false : true}
+            ref={goldRef}
+          />
+          <span>{isCost.Gold ? goldRef.current.value : ""}</span>
         </div>
       </div>
     </section>

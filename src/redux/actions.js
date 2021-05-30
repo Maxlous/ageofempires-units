@@ -1,83 +1,45 @@
 import { types } from "./types";
-
-export const filterAccordingToAge = (payload) => {
+// for filterReducer
+export const filterAccAge = (payload) => {
   return {
-    type: types.FILTER_FOR_AGE,
+    type: types.FILTER_ACC_AGE,
     payload: payload,
   };
 };
 
-export const feudalAge = () => {
+export const filterAccCost = (payload) => {
   return {
-    type: types.FEUDAL,
-  };
-};
-
-export const castleAge = () => {
-  return {
-    type: types.CASTLE,
-  };
-};
-
-export const darkAge = () => {
-  return {
-    type: types.DARK,
-  };
-};
-
-export const imperialAge = () => {
-  return {
-    type: types.IMPERIAL,
-  };
-};
-
-export const removeAge = (payload, age) => {
-  return {
-    type: types.REMOVE_AGE,
+    type: types.FILTER_ACC_COST,
     payload: payload,
-    age: age,
   };
 };
 
-export const allAges = () => {
+export const updateAge = (payload) => {
   return {
-    type: types.ALL_AGES,
-  };
-};
-
-export const filterAccordingToCost = (payload, cost) => {
-  return {
-    type: types.FILTER_FOR_COST,
+    type: types.AGES_WATCHER,
     payload: payload,
-    cost: cost,
   };
 };
 
-export const foodCost = (cost) => {
+export const updateCost = (costType, costValue) => {
   return {
-    type: types.FOOD_COST,
-    cost: cost,
+    type: types.COSTS_WATCHER,
+    costType,
+    costValue,
   };
 };
-
-export const goldCost = (cost) => {
+//for optionsReducer
+export const updateAgeOptions = (payload) => {
   return {
-    type: types.GOLD_COST,
-    cost: cost,
-  };
-};
-
-export const woodCost = (cost) => {
-  return {
-    type: types.WOOD_COST,
-    cost: cost,
-  };
-};
-
-export const removeCost = (payload, cost) => {
-  return {
-    type: types.REMOVE_COST,
+    type: types.UPDATE_AGE_OPTIONS,
     payload: payload,
-    cost: cost,
+  };
+};
+
+export const updateCostOptions = (costType, costValue) => {
+  return {
+    type: types.UPDATE_COST_OPTIONS,
+    costType,
+    costValue,
   };
 };
