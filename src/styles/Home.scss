@@ -1,17 +1,26 @@
 @import "colors";
 
-article {
+.homepage {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-h1 {
-  text-align: center;
-  color: $primary-text-color;
-}
-
-#homepage-image {
-  width: 100rem;
-  height: 50rem;
+  height: 95vh;
+  background-image: url("../images/home.jpg");
+  div {
+    width: 100vw;
+    height: 95vh;
+    background: linear-gradient(
+      -45deg,
+      rgba(252, 217, 168, 0.5),
+      rgba(229, 155, 197, 0.5)
+    );
+    position: relative;
+    h1 {
+      position: absolute;
+      top: 20%;
+      right: 10%;
+      color: $primary-text-color;
+      font-size: 4rem;
+    }
+  }
 }

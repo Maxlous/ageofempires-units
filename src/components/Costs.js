@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateCost } from "../redux/actions";
+import "../styles/Costs.scss";
 
 const Costs = () => {
   const isCost = useSelector((state) => state.optionsReducer.costs);
@@ -26,78 +27,80 @@ const Costs = () => {
   };
 
   return (
-    <section>
+    <section className="costs-section">
       <h2>Costs</h2>
-      <div>
-        <div>
-          <input
-            onChange={handleCheckboxChange}
-            id="wood"
-            value="Wood"
-            type="checkbox"
-          />
-          <label htmlFor="wood">Wood</label>
+      <div className="costs-section-inputs">
+        <div className="costs-section-inputs-wrapper">
+          <div>
+            <input
+              onChange={handleCheckboxChange}
+              id="wood"
+              value="Wood"
+              type="checkbox"
+            />
+            <label htmlFor="wood">Wood</label>
+          </div>
+          <div className="range-inputs">
+            <input
+              type="range"
+              name="Wood"
+              min="1"
+              max="200"
+              defaultValue={50}
+              onChange={handleSliderChange}
+              disabled={isCost.Wood ? false : true}
+              ref={woodRef}
+            />
+            <span>{isCost.Wood ? woodRef.current.value : ""}</span>
+          </div>
         </div>
-        <div>
-          <input
-            type="range"
-            name="Wood"
-            min="1"
-            max="200"
-            defaultValue={50}
-            onChange={handleSliderChange}
-            disabled={isCost.Wood ? false : true}
-            ref={woodRef}
-          />
-          <span>{isCost.Wood ? woodRef.current.value : ""}</span>
+        <div className="costs-section-inputs-wrapper">
+          <div>
+            <input
+              onChange={handleCheckboxChange}
+              id="food"
+              value="Food"
+              type="checkbox"
+            />
+            <label htmlFor="food">Food</label>
+          </div>
+          <div className="range-inputs">
+            <input
+              type="range"
+              name="Food"
+              min="1"
+              max="200"
+              defaultValue={50}
+              onChange={handleSliderChange}
+              disabled={isCost.Food ? false : true}
+              ref={foodRef}
+            />
+            <span>{isCost.Food ? foodRef.current.value : ""}</span>
+          </div>
         </div>
-      </div>
-      <div>
-        <div>
-          <input
-            onChange={handleCheckboxChange}
-            id="food"
-            value="Food"
-            type="checkbox"
-          />
-          <label htmlFor="food">Food</label>
-        </div>
-        <div>
-          <input
-            type="range"
-            name="Food"
-            min="1"
-            max="200"
-            defaultValue={50}
-            onChange={handleSliderChange}
-            disabled={isCost.Food ? false : true}
-            ref={foodRef}
-          />
-          <span>{isCost.Food ? foodRef.current.value : ""}</span>
-        </div>
-      </div>
-      <div>
-        <div>
-          <input
-            onChange={handleCheckboxChange}
-            id="gold"
-            value="Gold"
-            type="checkbox"
-          />
-          <label htmlFor="gold">Gold</label>
-        </div>
-        <div>
-          <input
-            type="range"
-            name="Gold"
-            min="1"
-            max="200"
-            defaultValue={50}
-            onChange={handleSliderChange}
-            disabled={isCost.Gold ? false : true}
-            ref={goldRef}
-          />
-          <span>{isCost.Gold ? goldRef.current.value : ""}</span>
+        <div className="costs-section-inputs-wrapper">
+          <div>
+            <input
+              onChange={handleCheckboxChange}
+              id="gold"
+              value="Gold"
+              type="checkbox"
+            />
+            <label htmlFor="gold">Gold</label>
+          </div>
+          <div className="range-inputs">
+            <input
+              type="range"
+              name="Gold"
+              min="1"
+              max="200"
+              defaultValue={50}
+              onChange={handleSliderChange}
+              disabled={isCost.Gold ? false : true}
+              ref={goldRef}
+            />
+            <span>{isCost.Gold ? goldRef.current.value : ""}</span>
+          </div>
         </div>
       </div>
     </section>

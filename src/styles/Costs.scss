@@ -1,0 +1,41 @@
+@import "colors";
+
+.costs-section {
+  h2 {
+    text-align: center;
+    color: $secondary-text-color;
+  }
+  &-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30vw;
+    &-wrapper {
+      margin-bottom: 1rem;
+      display: flex;
+      width: 30vw;
+      justify-content: space-around;
+    }
+  }
+}
+
+input[type="range"] {
+  filter: hue-rotate(180deg);
+  cursor: pointer;
+  width: 15vw;
+  margin-right: 30px;
+}
+
+input[type="checkbox"] {
+  filter: hue-rotate(180deg);
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+label {
+  margin-left: 20px;
+}
+
+.range-inputs {
+  width: 20vw;
+}

@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import TableItem from "./TableItem";
+import "../styles/UnitTable.scss";
 
 const UnitTable = () => {
   const data = useSelector((state) => state.filterReducer);

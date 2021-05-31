@@ -1,5 +1,6 @@
 import { updateAge } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
+import "../styles/Ages.scss";
 
 const Ages = () => {
   const dispatch = useDispatch();
@@ -10,57 +11,59 @@ const Ages = () => {
   };
 
   return (
-    <section>
+    <section className="ages-section">
       <h2>Ages</h2>
-      <div>
-        <input
-          onClick={handleCheck}
-          type="button"
-          value="All"
-          id="all"
-          name="All"
-          disabled={age === "All" ? true : false}
-        />
-      </div>
-      <div>
-        <input
-          onClick={handleCheck}
-          type="button"
-          value="Dark"
-          id="dark"
-          name="Dark"
-          disabled={age === "Dark" ? true : false}
-        />
-      </div>
-      <div>
-        <input
-          onClick={handleCheck}
-          type="button"
-          value="Feudal"
-          id="feudal"
-          name="Feudal"
-          disabled={age === "Feudal" ? true : false}
-        />
-      </div>
-      <div>
-        <input
-          onClick={handleCheck}
-          type="button"
-          value="Imperial"
-          id="imperial"
-          name="Imperial"
-          disabled={age === "Imperial" ? true : false}
-        />
-      </div>
-      <div>
-        <input
-          onClick={handleCheck}
-          type="button"
-          value="Castle"
-          id="castle"
-          name="Castle"
-          disabled={age === "Castle" ? true : false}
-        />
+      <div className="ages-section-inputs">
+        <div>
+          <input
+            onClick={handleCheck}
+            type="button"
+            value="All"
+            id="all"
+            name="All"
+            disabled={age === "All" ? true : false}
+          />
+        </div>
+        <div>
+          <input
+            onClick={handleCheck}
+            type="button"
+            value="Dark"
+            id="dark"
+            name="Dark"
+            disabled={age === "Dark" ? true : false}
+          />
+        </div>
+        <div>
+          <input
+            onClick={handleCheck}
+            type="button"
+            value="Feudal"
+            id="feudal"
+            name="Feudal"
+            disabled={age === "Feudal" ? true : false}
+          />
+        </div>
+        <div>
+          <input
+            onClick={handleCheck}
+            type="button"
+            value="Imperial"
+            id="imperial"
+            name="Imperial"
+            disabled={age === "Imperial" ? true : false}
+          />
+        </div>
+        <div>
+          <input
+            onClick={handleCheck}
+            type="button"
+            value="Castle"
+            id="castle"
+            name="Castle"
+            disabled={age === "Castle" ? true : false}
+          />
+        </div>
       </div>
     </section>
   );
