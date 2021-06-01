@@ -30,7 +30,7 @@ const Costs = () => {
       <h2>Costs</h2>
       <div className="costs-section-inputs">
         <div className="costs-section-inputs-wrapper">
-          <div>
+          <div className="checkbox-container">
             <input
               onChange={handleCheckboxChange}
               id="wood"
@@ -54,7 +54,7 @@ const Costs = () => {
           </div>
         </div>
         <div className="costs-section-inputs-wrapper">
-          <div>
+          <div className="checkbox-container">
             <input
               onChange={handleCheckboxChange}
               id="food"
@@ -78,7 +78,7 @@ const Costs = () => {
           </div>
         </div>
         <div className="costs-section-inputs-wrapper">
-          <div>
+          <div className="checkbox-container">
             <input
               onChange={handleCheckboxChange}
               id="gold"

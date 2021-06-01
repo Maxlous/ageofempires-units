@@ -9,10 +9,11 @@
     align-items: center;
     width: 30vw;
     &-wrapper {
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       display: flex;
       width: 30vw;
       justify-content: space-around;
+      align-items: center;
     }
   }
 }
@@ -22,6 +23,11 @@ input[type="range"] {
   cursor: pointer;
   width: 15vw;
   margin-right: 30px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
 }
 
 input[type="checkbox"] {
@@ -36,4 +42,6 @@ label {
 
 .range-inputs {
   width: 20vw;
+  display: flex;
+  align-items: center;
 }

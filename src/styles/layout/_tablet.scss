@@ -2,8 +2,9 @@
   html {
     font-size: 1vh;
   }
+
   .details {
-    .deneme {
+    &-container {
       height: 70vh;
       h1 {
         font-size: 3vh;
@@ -12,5 +13,66 @@
         font-size: 2vh;
       }
     }
+  }
+
+  .wrapper {
+    flex-direction: column;
+    .filters {
+      width: unset;
+      margin-right: unset;
+      align-self: center;
+      &-fixed {
+        position: unset !important;
+        width: 80vw;
+        height: 30vh;
+      }
+    }
+  }
+
+  table {
+    table-layout: initial;
+    width: 90vw;
+    align-self: center;
+    margin-top: 1rem;
+  }
+
+  .ages-section {
+    h2 {
+      font-size: 2rem;
+    }
+    &-inputs {
+      width: 50vw;
+    }
+  }
+
+  input[type="button"] {
+    font-size: 1.5rem;
+  }
+
+  .costs-section {
+    h2 {
+      font-size: 2rem;
+    }
+    &-inputs {
+      width: 50vw;
+      &-wrapper {
+        width: 50vw;
+      }
+    }
+  }
+
+  .checkbox-container {
+    label {
+      font-size: 1.5em;
+    }
+  }
+
+  .range-inputs {
+    width: 30vw;
+    font-size: 1.5em;
+  }
+
+  input[type="range"] {
+    width: 25vw;
   }
 }

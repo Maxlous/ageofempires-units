@@ -17,7 +17,7 @@ const Details = () => {
 
   return (
     <article className="details">
-      <div className="deneme">
+      <div className="details-container">
         <h1>{unitDetails.name}</h1>
         <div>
           <p>

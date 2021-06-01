@@ -7,4 +7,34 @@
       }
     }
   }
+
+  .ages-section {
+    &-inputs {
+      width: 90vw;
+    }
+  }
+
+  input[type="button"] {
+    padding: 15px 15px;
+  }
+
+  .costs-section {
+    &-inputs {
+      width: 90vw;
+      &-wrapper {
+        width: 90vw;
+        justify-content: center;
+      }
+    }
+  }
+
+  .range-inputs {
+    margin-left: 7vw;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  table {
+    margin-top: 5rem;
+  }
 }

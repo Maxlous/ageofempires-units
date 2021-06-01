@@ -4,7 +4,7 @@ import UnitTable from "../components/UnitTable";
 
 const Units = () => {
   return (
-    <div className="wrapper">
+    <main className="wrapper">
       <div className="filters">
         <div className="filters-fixed">
           <Ages />
@@ -12,7 +12,7 @@ const Units = () => {
         </div>
       </div>
       <UnitTable />
-    </div>
+    </main>
   );
 };
 
