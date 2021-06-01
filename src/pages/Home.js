@@ -1,12 +1,17 @@
-import "../styles/Home.scss";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <article className="homepage">
-      <div>
-        <h1>
-          Welcome to <br /> Age of Empires Units!
-        </h1>
+      <div className="gradient-color">
+        <div>
+          <h1>
+            Welcome to <br /> Age of Empires Units!
+          </h1>
+          <Link className="link" to="/units">
+            Let's checkout them!
+          </Link>
+        </div>
       </div>
     </article>
   );

@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   .filters {
-    height: 100vh;
     width: 30vw;
+    margin-right: 2vw;
     &-fixed {
       display: flex;
       flex-direction: column;

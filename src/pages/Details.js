@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import data from "../data.json";
-import "../styles/Details.scss";
 
 const Details = () => {
   const [unitDetails, setUnitDetails] = useState({});
@@ -29,7 +28,7 @@ const Details = () => {
             <span>Name: </span>
             {unitDetails.name}
           </p>
-          <p>
+          <p className="description">
             <span>Description: </span>
             {unitDetails.description}
           </p>

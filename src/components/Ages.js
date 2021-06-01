@@ -1,6 +1,5 @@
 import { updateAge } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import "../styles/Ages.scss";
 
 const Ages = () => {
   const dispatch = useDispatch();

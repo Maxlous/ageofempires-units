@@ -1,7 +1,6 @@
 import Ages from "../components/Ages";
 import Costs from "../components/Costs";
 import UnitTable from "../components/UnitTable";
-import "../styles/Units.scss";
 
 const Units = () => {
   return (

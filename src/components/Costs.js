@@ -1,14 +1,13 @@
 import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateCost } from "../redux/actions";
-import "../styles/Costs.scss";
 
 const Costs = () => {
   const isCost = useSelector((state) => state.optionsReducer.costs);
   const dispatch = useDispatch();
-  const goldRef = useRef();
-  const foodRef = useRef();
-  const woodRef = useRef();
+  const goldRef = useRef({});
+  const foodRef = useRef({});
+  const woodRef = useRef({});
 
   const handleCheckboxChange = (e) => {
     if (e.target.checked) {

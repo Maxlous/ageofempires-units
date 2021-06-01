@@ -1,0 +1,16 @@
+@media screen and (max-width: 1150px) {
+  html {
+    font-size: 1vh;
+  }
+  .details {
+    .deneme {
+      height: 70vh;
+      h1 {
+        font-size: 3vh;
+      }
+      p {
+        font-size: 2vh;
+      }
+    }
+  }
+}
