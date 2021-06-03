@@ -34,7 +34,7 @@ const filterReducer = (state = data.units, action) => {
             }
           }
         } catch (e) {
-          console.log(e);
+          // console.log(e);
         }
         try {
           if (
@@ -46,7 +46,7 @@ const filterReducer = (state = data.units, action) => {
             }
           }
         } catch (e) {
-          console.log(e);
+          // console.log(e);
         }
         try {
           if (
@@ -58,7 +58,7 @@ const filterReducer = (state = data.units, action) => {
             }
           }
         } catch (e) {
-          console.log(e);
+          // console.log(e);
         }
       }
       // remove duplicates

@@ -5,7 +5,9 @@ const Home = () => {
     <article className="homepage">
       <div className="gradient-color">
         <div>
-          <h1>Welcome to Age of Empires Units!</h1>
+          <h1>
+            Welcome to <br /> Age of Empires Units!
+          </h1>
           <Link className="link" to="/units">
             Let's checkout them!
           </Link>

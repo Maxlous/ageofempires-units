@@ -49,6 +49,7 @@ const Costs = () => {
               onChange={handleSliderChange}
               disabled={isCost.Wood ? false : true}
               ref={woodRef}
+              data-testid="wood-slider"
             />
             <span>{isCost.Wood ? woodRef.current.value : ""}</span>
           </div>
@@ -73,6 +74,7 @@ const Costs = () => {
               onChange={handleSliderChange}
               disabled={isCost.Food ? false : true}
               ref={foodRef}
+              data-testid="food-slider"
             />
             <span>{isCost.Food ? foodRef.current.value : ""}</span>
           </div>
